@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup Predictor 2026 - Free Excel for 30 Players</title>
+    <meta name="description" content="Free World Cup 2026 Predictor Excel. 3 difficulty levels for up to 30 players with custom points. Perfect for office Teams/SharePoint!">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a3d62 0%, #1a5f3a 50%, #0b5320 100%);
+            color: white;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #90ee90, #32cd32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .features {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .features h2 {
+            font-size: 1.6em;
+            color: #90ee90;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .features ul {
+            list-style: none;
+            font-size: 1.1em;
+        }
+        .features li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        .features li:before {
+            content: "⚽";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        .features li strong {
+            color: #32cd32;
+        }
+        .difficulty-table {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .difficulty-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 1em;
+        }
+        .difficulty-table th,
+        .difficulty-table td {
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .difficulty-table th {
+            background: rgba(50,205,50,0.3);
+            color: #90ee90;
+            font-weight: bold;
+        }
+        .difficulty-table .level-beginner { color: #ffd700; font-weight: bold; }
+        .difficulty-table .level-intermediate { color: #ff8c00; font-weight: bold; }
+        .difficulty-table .level-expert { color: #ff4500; font-weight: bold; }
+        .office-note {
+            background: rgba(0,170,255,0.2);
+            border-left: 4px solid #00aaff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        /* DONATION BUTTONS */
+        #donate-button-container {
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .donate-buttons-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .revolut-button {
+            display: inline-block;
+            background-color: #00aaff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .revolut-button:hover {
+            background-color: #ffffff;
+            color: #00aaff;
+        }
+
+        .donation-note {
+            background: rgba(255,215,0,0.2);
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        .download-section {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .download-section a {
+            color: #90ee90;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid #90ee90;
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .download-section a:hover {
+            background: #90ee90;
+            color: #0a3d62;
+        }
+        .stats {
+            margin-top: 20px;
+            font-size: 0.95em;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .stats span {
+            display: block;
+        }
+        footer {
+            margin-top: 30px;
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .features { padding: 20px; margin: 20px 0; }
+            .difficulty-table table { font-size: 0.9em; }
+            .donate-buttons-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://football-logos.cc/wp-content/uploads/2021/10/FIFA-World-Cup-2026.png" alt="World Cup 2026" class="logo">
+        
+        <h1>World Cup Predictor 2026</h1>
+        
+        <div class="features">
+            <h2>Automated Excel for up to 30 Players</h2>
+            <ul>
+                <li>
+                    <strong>Choose Your Difficulty Level:</strong>
+                </li>
+
+                <div class="difficulty-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Predictions Required</th>
+                                <th>Difficulty</th>
+                                <th>Perfect For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="level-beginner">🟡 Beginner</td>
+                                <td>Match scores only</td>
+                                <td>Easy</td>
+                                <td>Casual fans</td>
+                            </tr>
+                            <tr>
+                                <td class="level-intermediate">🟠 Intermediate</td>
+                                <td>Scores + First team</td>
+                                <td>Medium</td>
+                                <td>Regular viewers</td>
+                            </tr>
+                            <tr>
+                                <td class="level-expert">🔴 Expert</td>
+                                <td>Scores + First team + First player</td>
+                                <td>Hard</td>
+                                <td>True football fans</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <li>
+                    Up to 30 players can join the fun — compete with colleagues, friends, or family to prove who's the true football expert.
+                </li>
+                <li>
+                    <strong>The fully customizable point system</strong> keeps every round exciting — go for safe picks or back an underdog for big rewards and thrilling point swings.
+                </li>
+                <li>
+                    The Excel scoreboard will be updated regularly before and throughout the World Cup, keeping everyone up to date with the latest scores and rankings.
+                </li>
+            </ul>
+            
+            <div class="office-note">
+                Designed with business users in mind, the game works best on Microsoft SharePoint or Teams, making it ideal for friendly office rivalries and adding some World Cup excitement to the workplace.
+            </div>
+        </div>
+        
+        <!-- DONATION BUTTONS -->
+        <div id="donate-button-container">
+            <p><strong>Support the project:</strong> choose a coffee-sized donation below ☕</p>
+            <div class="donate-buttons-wrapper">
+                <a class="revolut-button" href="https://checkout.revolut.com/pay/c10b8888-0bda-4266-ba64-d99931e21f74" target="_blank" rel="noopener noreferrer">
+                    2 € – Small Support
+                </a>
+                <a class="revolut-button" href="https://checkout.revolut.com/pay/44ecd584-1ebd-4eb9-8585-4f0ab70cda47" target="_blank" rel="noopener noreferrer">
+                    5 € – Big Thanks
+                </a>
+                <a class="revolut-button" href="https://checkout.revolut.com/pay/b2b42b15-64ad-4015-ba8f-cd611107faad" target="_blank" rel="noopener noreferrer">
+                    10 € – Super Fan
+                </a>
+                <a class="revolut-button" href="https://checkout.revolut.com/pay/1826e90b-26c9-462c-8446-3a524a5fe0f9" target="_blank" rel="noopener noreferrer">
+                    20 € – Legend
+                </a>
+            </div>
+        </div>
+
+        <div class="donation-note">
+            <strong>💛 Donations help me maintain and update this project regularly!</strong><br>
+            I create this in my free time. Any support is much appreciated ❤️
+        </div>
+        
+        <div class="download-section">
+            <p>
+                <strong>Download Free Version:</strong>
+                <a id="downloadLink" href="https://docs.google.com/spreadsheets/d/1XhFMlxuxIR0diU13m3lqIcHxJIPemuq3/edit?usp=drive_link&ouid=104765301451363783564&rtpof=true&sd=true" download="World-Cup-Predictor-2026-Updated.xlsx">Download Updated Version</a>
+            </p>
+        </div>
+
+        <div class="stats">
+            <span>👀 Total visits (this browser): <strong id="visitCount">0</strong></span>
+            <span>📥 Total downloads (this browser): <strong id="downloadCount">0</strong></span>
+        </div>
+        
+        <footer>&copy; 2026 World Cup Predictor. Made with ⚽</footer>
+    </div>
+
+    <script>
+        // Counter script for visits and downloads only
+        function getNumberFromStorage(key, defaultValue) {
+            const raw = localStorage.getItem(key);
+            const parsed = parseInt(raw, 10);
+            return isNaN(parsed) ? defaultValue : parsed;
+        }
+
+        const visitKey = 'wcp2026_visits';
+        const downloadKey = 'wcp2026_downloads';
+
+        let visits = getNumberFromStorage(visitKey, 0);
+        let downloads = getNumberFromStorage(downloadKey, 0);
+
+        visits += 1;
+        localStorage.setItem(visitKey, visits);
+
+        function refreshDisplay() {
+            document.getElementById('visitCount').textContent = visits;
+            document.getElementById('downloadCount').textContent = downloads;
+        }
+
+        const downloadLink = document.getElementById('downloadLink');
+        if (downloadLink) {
+            downloadLink.addEventListener('click', function () {
+                downloads += 1;
+                localStorage.setItem(downloadKey, downloads);
+                refreshDisplay();
+            });
+        }
+
+        refreshDisplay();
+    </script>
+</body>
+</html>
