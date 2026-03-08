@@ -102,7 +102,6 @@
             font-style: italic;
         }
 
-        /* DONATION BUTTONS */
         #donate-button-container {
             margin: 40px auto;
             padding: 20px;
@@ -250,7 +249,6 @@
             </div>
         </div>
         
-        <!-- DONATION BUTTONS -->
         <div id="donate-button-container">
             <p><strong>Support the project:</strong> choose a coffee-sized donation below ☕</p>
             <div class="donate-buttons-wrapper">
@@ -277,7 +275,12 @@
         <div class="download-section">
             <p>
                 <strong>Download Free Version:</strong>
-                <a id="downloadLink" href="https://docs.google.com/spreadsheets/d/1XhFMlxuxIR0diU13m3lqIcHxJIPemuq3/edit?usp=drive_link&ouid=104765301451363783564&rtpof=true&sd=true" download="World-Cup-Predictor-2026-Updated.xlsx">Download Updated Version</a>
+                <a id="downloadLink"
+                   href="https://docs.google.com/spreadsheets/d/1XhFMlxuxIR0diU13m3lqIcHxJIPemuq3/export?format=xlsx"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Download Updated Version
+                </a>
             </p>
         </div>
 
@@ -290,7 +293,6 @@
     </div>
 
     <script>
-        // Counter script for visits and downloads only
         function getNumberFromStorage(key, defaultValue) {
             const raw = localStorage.getItem(key);
             const parsed = parseInt(raw, 10);
