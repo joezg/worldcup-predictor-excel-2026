@@ -283,46 +283,8 @@
                 </a>
             </p>
         </div>
-
-        <div class="stats">
-            <span>👀 Total visits (this browser): <strong id="visitCount">0</strong></span>
-            <span>📥 Total downloads (this browser): <strong id="downloadCount">0</strong></span>
-        </div>
         
         <footer>&copy; 2026 World Cup Predictor. Made with ⚽</footer>
     </div>
-
-    <script>
-        function getNumberFromStorage(key, defaultValue) {
-            const raw = localStorage.getItem(key);
-            const parsed = parseInt(raw, 10);
-            return isNaN(parsed) ? defaultValue : parsed;
-        }
-
-        const visitKey = 'wcp2026_visits';
-        const downloadKey = 'wcp2026_downloads';
-
-        let visits = getNumberFromStorage(visitKey, 0);
-        let downloads = getNumberFromStorage(downloadKey, 0);
-
-        visits += 1;
-        localStorage.setItem(visitKey, visits);
-
-        function refreshDisplay() {
-            document.getElementById('visitCount').textContent = visits;
-            document.getElementById('downloadCount').textContent = downloads;
-        }
-
-        const downloadLink = document.getElementById('downloadLink');
-        if (downloadLink) {
-            downloadLink.addEventListener('click', function () {
-                downloads += 1;
-                localStorage.setItem(downloadKey, downloads);
-                refreshDisplay();
-            });
-        }
-
-        refreshDisplay();
-    </script>
 </body>
 </html>
