@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-// Inicijalizacija brojača (samo jednom)
-fetch('https://api.countapi.xyz/create?namespace=wc2026predictor&key=visits&value=0');
-fetch('https://api.countapi.xyz/create?namespace=wc2026predictor&key=downloads&value=0');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Cup Predictor 2026 - Free Excel for 30 Players</title>
@@ -295,30 +290,6 @@ fetch('https://api.countapi.xyz/create?namespace=wc2026predictor&key=downloads&v
 
         <footer>&copy; 2026 World Cup Predictor. Made with ⚽</footer>
     </div>
-
-
-
-<script>
-fetch('https://api.countapi.xyz/hit/wc2026predictor/visits')
-  .then(res => res.json())
-  .then(res => {
-    document.getElementById('visits').innerText = res.value;
-  });
-</script>
-
-<script>
-document.getElementById("downloadLink").addEventListener("click", function () {
-    fetch('https://api.countapi.xyz/hit/wc2026predictor/downloads');
-});
-
-fetch('https://api.countapi.xyz/get/wc2026predictor/downloads')
-  .then(res => res.json())
-  .then(res => {
-    document.getElementById('downloads').innerText = res.value;
-  });
-</script>
-
-
 
 
 </body>
