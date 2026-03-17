@@ -290,26 +290,34 @@
 
         <footer>&copy; 2026 World Cup Predictor. Made with ⚽</footer>
     </div>
+
 <script>
-// Visitor counter
+// Inicijalizacija brojača (samo jednom)
+fetch('https://api.countapi.xyz/create?namespace=wc2026predictor&key=visits&value=0');
+fetch('https://api.countapi.xyz/create?namespace=wc2026predictor&key=downloads&value=0');
+</script>
+
+<script>
 fetch('https://api.countapi.xyz/hit/wc2026predictor/visits')
   .then(res => res.json())
   .then(res => {
     document.getElementById('visits').innerText = res.value;
   });
+</script>
 
-// Download counter - increase on click
+<script>
 document.getElementById("downloadLink").addEventListener("click", function () {
     fetch('https://api.countapi.xyz/hit/wc2026predictor/downloads');
 });
 
-// Show current download count
 fetch('https://api.countapi.xyz/get/wc2026predictor/downloads')
   .then(res => res.json())
   .then(res => {
     document.getElementById('downloads').innerText = res.value;
   });
 </script>
+
+
 
 
 </body>
